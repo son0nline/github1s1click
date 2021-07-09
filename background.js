@@ -1,12 +1,24 @@
-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+function github1s(){
+	var rsGit = window.location.href.match(/github\.com(\/\w+){2}(\/.*)?/g);
+	
+	var rsGit1s = window.location.href.match(/github1s\.com(\/\w+){2}(\/.*)?/g);
+	if(rsGit) {
+		var newUrl = window.location.href.replace('github','github1s');
+		window.open(newUrl, '_blank');
+		return newUrl;
+	}
 
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function (tab) {
-  // No tabs or host permissions needed!
-  //console.log('Turning ' + tab.url + ' red!');
-  chrome.tabs.executeScript({
-    file: 'oneclick.js'
+	if(rsGit1s) {
+		var newUrl = window.location.href.replace('github1s','github');
+		window.open(newUrl, '_blank');
+		return newUrl;
+	}
+	return "";
+}
+
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: github1s
   });
 });
