@@ -4,7 +4,7 @@
    }],
   "name": "github1s1click",
   "description": "1 click to Github1s, 1 click to back",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "permissions": [
     "activeTab",
     "scripting"

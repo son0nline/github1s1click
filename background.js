@@ -1,7 +1,7 @@
 function github1s(){
-	var rsGit = window.location.href.match(/github\.com(\/\w+){2}(\/.*)?/g);
+	var rsGit = window.location.href.match(/github\.com(\/.*){2}(\/.*)?/g);
 	
-	var rsGit1s = window.location.href.match(/github1s\.com(\/\w+){2}(\/.*)?/g);
+	var rsGit1s = window.location.href.match(/github1s\.com(\/.*){2}(\/.*)?/g);
 	if(rsGit) {
 		var newUrl = window.location.href.replace('github','github1s');
 		window.open(newUrl, '_blank');
